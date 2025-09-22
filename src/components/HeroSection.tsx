@@ -1,16 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { useEffect, useRef } from "react";
-
 const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       // Set slower playback speed for more cinematic effect
       video.playbackRate = 0.6;
-      
+
       // Ensure seamless looping
       const handleTimeUpdate = () => {
         // Restart video slightly before it ends to prevent any flicker
@@ -18,34 +16,21 @@ const HeroSection = () => {
           video.currentTime = 0;
         }
       };
-
       const handleLoadedData = () => {
         video.playbackRate = 0.6;
       };
-
       video.addEventListener('timeupdate', handleTimeUpdate);
       video.addEventListener('loadeddata', handleLoadedData);
-      
       return () => {
         video.removeEventListener('timeupdate', handleTimeUpdate);
         video.removeEventListener('loadeddata', handleLoadedData);
       };
     }
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover"
-        >
+        <video ref={videoRef} autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
           <source src="/videos/metro-bg-complete.mp4" type="video/mp4" />
         </video>
         
@@ -97,34 +82,14 @@ const HeroSection = () => {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="text-lg px-8 py-6 h-auto"
-              >
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6 h-auto">
                 DISCOVER THE PLATFORM
               </Button>
             </div>
           </div>
 
           {/* Right Content - Video CTA */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-6">
-            <div className="relative group cursor-pointer">
-              {/* Play Button */}
-              <div className="w-20 h-20 md:w-24 md:h-24 border-2 border-metro-cyan rounded-full flex items-center justify-center bg-metro-surface/30 backdrop-blur-sm hover:bg-metro-cyan hover:shadow-glow transition-all duration-300 group-hover:scale-110">
-                <Play className="w-8 h-8 md:w-10 md:h-10 text-metro-cyan group-hover:text-primary-foreground ml-1" fill="currentColor" />
-              </div>
-              
-              {/* Animated rings */}
-              <div className="absolute inset-0 rounded-full border border-metro-cyan opacity-50 animate-ping" />
-              <div className="absolute inset-0 rounded-full border border-metro-glow opacity-30 animate-ping delay-200" />
-            </div>
-            
-            {/* Video CTA Text */}
-            <p className="text-sm font-metro font-medium text-muted-foreground tracking-wider text-center lg:text-right">
-              WATCH INTRODUCTION VIDEO
-            </p>
-          </div>
+          
         </div>
       </div>
 
@@ -136,8 +101,6 @@ const HeroSection = () => {
           <div className="w-2 h-2 bg-metro-teal rounded-full animate-bounce delay-500" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
