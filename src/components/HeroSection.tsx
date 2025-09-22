@@ -1,20 +1,52 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Set slower playback speed for more cinematic effect
+      video.playbackRate = 0.6;
+      
+      // Ensure seamless looping
+      const handleTimeUpdate = () => {
+        // Restart video slightly before it ends to prevent any flicker
+        if (video.currentTime >= video.duration - 0.1) {
+          video.currentTime = 0;
+        }
+      };
+
+      const handleLoadedData = () => {
+        video.playbackRate = 0.6;
+      };
+
+      video.addEventListener('timeupdate', handleTimeUpdate);
+      video.addEventListener('loadeddata', handleLoadedData);
+      
+      return () => {
+        video.removeEventListener('timeupdate', handleTimeUpdate);
+        video.removeEventListener('loadeddata', handleLoadedData);
+      };
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="/videos/metro-bg-complete.mp4" type="video/mp4" />
-          <source src="/videos/metro-bg-elements.mp4" type="video/mp4" />
         </video>
         
         {/* Gradient Overlay */}
