@@ -4,75 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import { useAuth } from "@/hooks/useAuth";
-import { useToast } from "@/components/ui/use-toast";
-import { clientLog } from "@/lib/clientLogger";
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
 
 const Login = () => {
   const [supervisorId, setSupervisorId] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-<<<<<<< HEAD
-  const { signIn, signUp } = useAuth();
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    const email = supervisorId.includes("@") ? supervisorId : `${supervisorId}@example.com`;
-    clientLog("info", "auth.signin.attempt", { email, password: password ? "********" : "<empty>" });
-    const { error } = await signIn(email, password);
-    setIsLoading(false);
-    if (!error) {
-      clientLog("info", "auth.signin.success", { email });
-      window.location.replace("/dashboard");
-      return;
-    }
-    // Soft dev bypass path: if using the known dev email/password, set a flag and route
-    if (email === "29febsayan@gmail.com" && password === "12345678") {
-      clientLog("warn", "auth.signin.dev_bypass", { email });
-      localStorage.setItem("dev_session", "1");
-      window.location.replace("/dashboard");
-      return;
-    }
-    clientLog("error", "auth.signin.failed", { email, error: String(error) });
-  };
-
-  const handleCreate = async () => {
-    if (!supervisorId || !password) return;
-    setIsLoading(true);
-    const email = `${supervisorId}@example.com`;
-    clientLog("info", "auth.signup.attempt", { email, password: password ? "********" : "<empty>" });
-    const { error } = await signUp(email, password);
-    setIsLoading(false);
-    if (!error) {
-      toast({ title: "Signup successful", description: "Check your inbox to confirm (if required)" });
-      // After signup, attempt sign-in
-      clientLog("info", "auth.signup.success", { email });
-      const r = await signIn(email, password);
-      if (!r.error) {
-        clientLog("info", "auth.post_signup_signin.success", { email });
-        window.location.href = "/dashboard";
-      } else {
-        clientLog("error", "auth.post_signup_signin.failed", { email, error: String(r.error) });
-      }
-    } else {
-      clientLog("error", "auth.signup.failed", { email, error: String(error) });
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-metro-deep via-background to-metro-surface p-4"
-    >
-=======
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -87,7 +24,6 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-metro-deep via-background to-metro-surface p-4">
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -left-4 w-72 h-72 bg-metro-cyan/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -155,13 +91,6 @@ const Login = () => {
                   </span>
                 </Button>
               </motion.div>
-<<<<<<< HEAD
-              <div className="flex justify-between text-xs">
-                <button type="button" onClick={handleCreate} className="text-metro-cyan hover:underline">Create account</button>
-                <span className="text-muted-foreground">Use your supervisor ID</span>
-              </div>
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
             </form>
             
             <div className="text-center">
@@ -172,11 +101,7 @@ const Login = () => {
           </CardContent>
         </Card>
       </motion.div>
-<<<<<<< HEAD
-    </motion.div>
-=======
     </div>
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
   );
 };
 

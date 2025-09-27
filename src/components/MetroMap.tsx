@@ -1,18 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-<<<<<<< HEAD
-import { useNavigate } from "react-router-dom";
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
 
 const MetroMap = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-<<<<<<< HEAD
-  const navigate = useNavigate();
-
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
   useEffect(() => {
     // Add fade-in animation to all elements
     const elements = containerRef.current?.querySelectorAll('.tp-caption');
@@ -311,10 +302,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Aluva')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Aluva
           </div>
@@ -330,10 +317,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Ernakulam South')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Ernakulam South
           </div>
@@ -378,10 +361,6 @@ const MetroMap = () => {
               minWidth: '87px',
               maxWidth: '87px'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Kalamassery')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Kalamassery
           </div>
@@ -397,10 +376,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Palarivattom')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Palarivattom
           </div>
@@ -416,10 +391,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('M.G Road')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             M.G Road
           </div>
@@ -435,10 +406,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Cochin University')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Cochin University
           </div>
@@ -454,10 +421,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('JLN Stadium')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             JLN Stadium
           </div>
@@ -482,10 +445,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Edapally')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Edapally
           </div>
@@ -528,10 +487,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('Vyttila')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             Vyttila
           </div>
@@ -547,10 +502,6 @@ const MetroMap = () => {
               fontFamily: 'Titillium Web',
               whiteSpace: 'nowrap'
             }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/xai/${encodeURIComponent('SN Junction')}`)}
-=======
->>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           >
             SN Junction
           </div>
