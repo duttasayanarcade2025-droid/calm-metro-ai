@@ -122,6 +122,7 @@ All colors MUST be HSL for proper theming.
     @apply bg-background text-foreground;
   }
 }
+<<<<<<< HEAD
 
 /* Compatibility fallbacks */
 @layer base {
@@ -149,3 +150,5 @@ All colors MUST be HSL for proper theming.
   backdrop-filter: blur(18px);
   border: 1px solid hsl(var(--border) / 0.6);
 }
+=======
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee

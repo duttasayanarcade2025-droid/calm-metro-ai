@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+<<<<<<< HEAD
   // Development-only client->terminal logger endpoint
   configureServer(server) {
     server.middlewares.use("/_client-log", async (req, res) => {
@@ -41,4 +42,6 @@ export default defineConfig(({ mode }) => ({
       }
     });
   },
+=======
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
 }));

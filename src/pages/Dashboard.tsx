@@ -6,7 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
+<<<<<<< HEAD
 
+=======
+import { motion } from "framer-motion";
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
 import { 
   Clock, 
   Train, 
@@ -18,11 +22,14 @@ import {
   Zap
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { setBrandingPriority, overrideJobCard, addManualOverride, setCleaningSlot as supaSetCleaningSlot, getDashboardStats } from "@/lib/kmrl";
 import { useToast } from "@/components/ui/use-toast";
+=======
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -37,6 +44,7 @@ const Dashboard = () => {
     navigate("/ai-processing");
   };
 
+<<<<<<< HEAD
   const brandingMutation = useMutation({
     mutationFn: async () => setBrandingPriority(trainsetNumber, highPriority),
     onSuccess: () => toast({ title: "Branding priority updated" }),
@@ -105,6 +113,15 @@ const Dashboard = () => {
           </SceneCanvas>
         </div>
       </Suspense>
+=======
+  const handleSubmit = (moduleType: string) => {
+    // Submit logic here - will connect to backend later
+    console.log(`Submitting ${moduleType} module`);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-metro-deep via-background to-metro-surface">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
       {/* Header */}
       <div className="bg-card/80 backdrop-blur-md border-b border-border/50">
         <div className="container mx-auto px-6 py-4">
@@ -134,10 +151,17 @@ const Dashboard = () => {
         {/* Status Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           {[
+<<<<<<< HEAD
             { icon: Train, label: "Active Trains", value: String(stats?.activeTrains ?? 0), color: "text-metro-cyan" },
             { icon: Clock, label: "Pending Jobs", value: String(stats?.pendingJobs ?? 0), color: "text-orange-500" },
             { icon: Settings, label: "Maintenance", value: String(stats?.maintenance ?? 0), color: "text-yellow-500" },
             { icon: Zap, label: "Priority Tasks", value: String(stats?.priorityTasks ?? 0), color: "text-red-500" },
+=======
+            { icon: Train, label: "Active Trains", value: "12", color: "text-metro-cyan" },
+            { icon: Clock, label: "Pending Jobs", value: "8", color: "text-orange-500" },
+            { icon: Settings, label: "Maintenance", value: "3", color: "text-yellow-500" },
+            { icon: Zap, label: "Priority Tasks", value: "2", color: "text-red-500" },
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -145,7 +169,11 @@ const Dashboard = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
+<<<<<<< HEAD
               <Card className="glass hover:shadow-lg transition-all duration-300">
+=======
+              <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
                 <CardContent className="flex items-center justify-between p-6">
                   <div>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -166,7 +194,11 @@ const Dashboard = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
+<<<<<<< HEAD
             <Card className="glass hover:shadow-lg transition-all duration-300">
+=======
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Wrench className="h-5 w-5 text-metro-cyan" />
@@ -189,11 +221,17 @@ const Dashboard = () => {
                 </div>
                 <Button 
                   onClick={() => handleSubmit("job-card")}
+<<<<<<< HEAD
                   disabled={!jobCardId || jobCardMutation.isPending}
                   className="w-full bg-primary hover:bg-primary/90 group relative overflow-hidden"
                 >
                   <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-metro-cyan to-metro-teal opacity-20 transition-transform duration-300" />
                   <span className="relative">Override Job Card</span>
+=======
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
+                  Override Job Card
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
                 </Button>
               </CardContent>
             </Card>
@@ -205,7 +243,11 @@ const Dashboard = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
+<<<<<<< HEAD
             <Card className="glass hover:shadow-lg transition-all duration-300">
+=======
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Sparkles className="h-5 w-5 text-metro-cyan" />
@@ -235,11 +277,17 @@ const Dashboard = () => {
                 </div>
                 <Button 
                   onClick={() => handleSubmit("branding")}
+<<<<<<< HEAD
                   disabled={!trainsetNumber || brandingMutation.isPending}
                   className="w-full bg-primary hover:bg-primary/90 group relative overflow-hidden"
                 >
                   <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-metro-cyan to-metro-teal opacity-20 transition-transform duration-300" />
                   <span className="relative">Set Priority</span>
+=======
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
+                  Set Priority
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
                 </Button>
               </CardContent>
             </Card>
@@ -251,7 +299,11 @@ const Dashboard = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
+<<<<<<< HEAD
             <Card className="glass hover:shadow-lg transition-all duration-300">
+=======
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Settings className="h-5 w-5 text-metro-cyan" />
@@ -288,11 +340,17 @@ const Dashboard = () => {
                 </div>
                 <Button 
                   onClick={() => handleSubmit("manual-override")}
+<<<<<<< HEAD
                   disabled={!selectedTrainset || !operationalNote || manualOverrideMutation.isPending}
                   className="w-full bg-primary hover:bg-primary/90 group relative overflow-hidden"
                 >
                   <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-metro-cyan to-metro-teal opacity-20 transition-transform duration-300" />
                   <span className="relative">Apply Override</span>
+=======
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
+                  Apply Override
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
                 </Button>
               </CardContent>
             </Card>
@@ -304,7 +362,11 @@ const Dashboard = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
           >
+<<<<<<< HEAD
             <Card className="glass hover:shadow-lg transition-all duration-300">
+=======
+            <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-lg transition-all duration-300">
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <MapPin className="h-5 w-5 text-metro-cyan" />
@@ -333,6 +395,7 @@ const Dashboard = () => {
                   <Button 
                     variant="outline"
                     onClick={() => handleSubmit("cleaning-block")}
+<<<<<<< HEAD
                     disabled={!cleaningSlot || cleaningBlockMutation.isPending}
                     className="bg-background/50 group relative overflow-hidden"
                   >
@@ -346,6 +409,17 @@ const Dashboard = () => {
                   >
                     <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-gradient-to-r from-metro-cyan to-metro-teal opacity-20 transition-transform duration-300" />
                     <span className="relative">Open Slot</span>
+=======
+                    className="bg-background/50"
+                  >
+                    Block Slot
+                  </Button>
+                  <Button 
+                    onClick={() => handleSubmit("cleaning-open")}
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    Open Slot
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
                   </Button>
                 </div>
               </CardContent>
@@ -370,7 +444,11 @@ const Dashboard = () => {
           </Button>
         </motion.div>
       </div>
+<<<<<<< HEAD
     </motion.div>
+=======
+    </div>
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
   );
 };
 

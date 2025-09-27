@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import MetroMap from "@/components/MetroMap";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
 import ServiceStatus from "@/components/home/ServiceStatus";
 import NewsHighlights from "@/components/home/NewsHighlights";
@@ -23,6 +24,15 @@ const Index = () => {
       <PlanYourJourney />
       <Footer />
     </motion.div>
+=======
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <HeroSection />
+      <MetroMap />
+    </div>
+>>>>>>> b62f358138f394885c6991f0be804cb520b5b9ee
   );
 };
 
